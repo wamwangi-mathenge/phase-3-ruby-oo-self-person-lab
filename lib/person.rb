@@ -11,6 +11,22 @@ class Person
         @hygiene = hygiene
     end
 
+    def happiness=(value)
+        @happiness = [[0, value].max, 10].min
+    end
+
+    def hygiene=(value)
+        @hygiene = [[0, value].max, 10].min
+    end
+
+    def happy?
+        @happiness > 7
+    end
+
+    def clean?
+        @hygiene > 7
+    end
+
     def get_paid(amount)
         self.bank_account += amount
         "all about the benjamins"
